@@ -13,12 +13,12 @@ dtmf_table = {
 }
 
 # Bandpass filter function
-def bandpass_filter(signal, low_cut, high_cut, sr, order=6):
-    nyquist = 0.5 * sr
+def bandpass_filter(_signal, low_cut, high_cut, _sampling_rate, order=6):
+    nyquist = 0.5 * _sampling_rate
     low = low_cut / nyquist
     high = high_cut / nyquist
     b, a = butter(order, [low, high], btype='band')
-    return lfilter(b, a, signal)
+    return lfilter(b, a, _signal)
 
 # Find dominant frequencies in a spectrum
 def find_dominant_frequencies(spectrum, frequencies, threshold=1.0):
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     print("Starting DTMF detection...")
 
     # Load audio
-    audio_path = 'test3.wav'  # Replace with your file
+    audio_path = 'test1.wav'  # Replace with your file
     signal, sampling_rate = librosa.load(audio_path, sr=None)
 
     # Parameters
