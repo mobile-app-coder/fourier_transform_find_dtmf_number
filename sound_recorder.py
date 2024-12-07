@@ -23,8 +23,9 @@ def record_audio(filename, duration, samplerate=44100):
 
 
 if __name__ == "__main__":
+    print('Recording phone number....')
     # Specify the output filename, duration, and sampling rate
-    output_file = "test.wav"
+    output_file = "test3.wav"
     record_duration = 10  # seconds
 
     record_audio(output_file, record_duration)
