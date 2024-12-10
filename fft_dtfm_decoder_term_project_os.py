@@ -64,7 +64,7 @@ if __name__ == "__main__":
     frame_size = 2048
     hop_length = 512
 
-    # Apply bandpass filter
+    # filtering
     filtered_signal = bandpass_filter(signal, 650, 1700, sampling_rate)
     stft = np.abs(librosa.stft(filtered_signal, n_fft=frame_size, hop_length=hop_length))
     frequencies = librosa.fft_frequencies(sr=sampling_rate, n_fft=frame_size)
